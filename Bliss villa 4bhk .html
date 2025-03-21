@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Country Escape</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="The River template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
+    <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="stylesheet" href="room-details.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+    <!-- Header -->
+
+    <header class="header">
+        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+            <div class="logo"><a href="index.html"><img src="newimg/logo.jpg"></a></div>
+            <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
+                <nav class="main_nav">
+                    <ul class="d-flex flex-row align-items-start justify-content-start">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li class="active"><a href="room.html">Villa</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="book_button"><a href="booking.html">Book Online</a></div>
+                <div class="header_phone d-flex flex-row align-items-center justify-content-center">
+                    <img src="images/phone.png" alt="">
+                    <span>0183-12345678</span>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu -->
+
+    <div class="menu trans_400 d-flex flex-column align-items-end justify-content-start">
+        <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <div class="menu_content">
+            <nav class="menu_nav text-right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="room.html">Rooms</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu_extra">
+            <div class="menu_book text-right"><a href="#">Book online</a></div>
+            <div class="menu_phone d-flex flex-row align-items-center justify-content-center">
+                <img src="images/phone-2.png" alt="">
+                <span>0183-12345678</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home -->
+    <div class="background">
+        <img src="newimg/background.png" alt="Bed Image">
+        <h2 class="text-overlay"> Our Room</h2>
+    </div>
+
+
+
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="col-md-12">
+                    <div class="image-container">
+                        <span class="luxury-badge">Luxury</span>
+                        <img src="newimg/PatilFarm/bed.jpeg" class="img-fluid rounded main-image" alt="Luxury Villa">
+                        <div class="overlay-buttons">
+                            <button class="btn btn-dark">View Video</button>
+                            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#photoModal">View
+                                Photos</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bootstrap Modal for Image Slider -->
+                <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="photoModalLabel">Luxury Villa Photos</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Bootstrap Carousel -->
+                                <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="newimg/PatilFarm/bed.jpeg" class="d-block w-100" alt="Bed 1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="newimg/PatilFarm/bed1.jpeg" class="d-block w-100" alt="Bed 2">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="newimg/PatilFarm/pool.jpeg" class="d-block w-100" alt="Bed 3">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="newimg/PatilFarm/pool2.jpeg" class="d-block w-100" alt="Bed 4">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="newimg/PatilFarm/root.jpeg" class="d-block w-100" alt="Bed 5">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="newimg/PatilFarm/ground.jpeg" class="d-block w-100" alt="Bed 3">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="newimg/PatilFarm/outside.jpeg" class="d-block w-100" alt="Bed 4">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="newimg/PatilFarm/outsidepool.jpeg" class="d-block w-100" alt="Bed 5">
+                                        </div>
+                                    </div>
+                                    <!-- Carousel Controls -->
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bootstrap CSS & JS (Required for Modal & Carousel) -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+            </div>
+            <div class="col-md-4">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <img src="newimg/PatilFarm/pool.jpeg" class="img-fluid rounded" alt="Side View">
+                    </div>
+                    <div class="col-12">
+                        <img src="newimg/PatilFarm/pool2.jpeg" class="img-fluid rounded" alt="Living Area">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="booking-form">
+        <h2>Book Your Room</h2>
+    
+        <!-- Location Dropdown -->
+        <div class="form-group">
+            <label for="location">Select Location:</label>
+            <select id="location" onchange="updateAddress()">
+                <option value="">-- Select Location --</option>
+                <option value="Karjat">Karjat</option>
+                <option value="Lonavala">Lonavala</option>
+                <option value="Khopoli">Khopoli</option>
+                <option value="Pune">Pune</option>
+            </select>
+        </div>
+    
+        <!-- Address Dropdown -->
+        <div class="form-group">
+            <label for="address">Select Address:</label>
+            <select id="address">
+                <option value="">-- Select Address --</option>
+            </select>
+        </div>
+    
+        <!-- Check-in and Check-out Dates -->
+        <div class="form-group">
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" onchange="setMinCheckoutDate()">
+        </div>
+        <div class="form-group">
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" onchange="calculatePrice()">
+        </div>
+    
+        <!-- Total Price Display -->
+        <div class="form-group">
+            <label>Total Price:</label>
+            <h3 id="total-price">₹0</h3>
+        </div>
+    
+        <div class="form-group">
+            <label for="adults">Adults:</label>
+            <select id="adults">
+                <option value="1">1 Adult</option>
+                <option value="2">2 Adults</option>
+                <option value="3">3 Adults</option>
+                <option value="4">4 Adults</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <button onclick="bookRoom()">Book Now</button>
+        </div>
+    </div>
+    
+    <script>
+        let today = new Date().toISOString().split("T")[0];
+        document.getElementById("checkin").setAttribute("min", today);
+        document.getElementById("checkout").setAttribute("min", today);
+    
+        const addressList = {
+            "Karjat": [
+                "Villa in Kothimbe, Maharashtra",
+                "Unnamed Road, Tiwane, Maharashtra 410201"
+            ],
+            "Lonavala": [
+                "QC77+JHG, Parsi Colony, Lonavala, Maharashtra 410403",
+                "Village Sadapur, Taluka, Maval, Lonavala, Maharashtra 410405",
+                "Villa no.2, The Beverly Hills, Kune Village, Khandala, Lonavala, Kune N.m., Maharashtra 410405",
+                "Old Mumbai - Pune Hwy, Varsoli, Budhele, Maharashtra 410405"
+            ],
+            "Khopoli": [
+                "El Casa, house no. 72, Mirkutwadi, near Imagicaa Khopoli, Lonavala, Maharashtra 410203"
+            ],
+            "Pune": [
+                "Pachane, Pusane road, Pune, Maharashtra 412115"
+            ]
+        };
+    
+        function updateAddress() {
+            let location = document.getElementById("location").value;
+            let addressDropdown = document.getElementById("address");
+            addressDropdown.innerHTML = '<option value="">-- Select Address --</option>';
+    
+            if (location && addressList[location]) {
+                addressList[location].forEach(address => {
+                    let option = document.createElement("option");
+                    option.value = address;
+                    option.textContent = address;
+                    addressDropdown.appendChild(option);
+                });
+            }
+        }
+    
+        function setMinCheckoutDate() {
+            let checkinDate = document.getElementById("checkin").value;
+            let checkoutInput = document.getElementById("checkout");
+    
+            if (checkinDate) {
+                checkoutInput.removeAttribute("disabled");
+                checkoutInput.setAttribute("min", checkinDate);
+            } else {
+                checkoutInput.setAttribute("disabled", "true");
+            }
+    
+            calculatePrice();
+        }
+    
+        function calculatePrice() {
+            let checkin = document.getElementById("checkin").value;
+            let checkout = document.getElementById("checkout").value;
+            let totalPriceDisplay = document.getElementById("total-price");
+            let pricePerNight = 8000;
+    
+            if (checkin && checkout) {
+                let checkinDate = new Date(checkin);
+                let checkoutDate = new Date(checkout);
+                let nights = (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24);
+    
+                if (nights > 0) {
+                    let totalPrice = nights * pricePerNight;
+                    totalPriceDisplay.textContent = `₹${totalPrice}`;
+                } else {
+                    totalPriceDisplay.textContent = "₹0";
+                }
+            } else {
+                totalPriceDisplay.textContent = "₹0";
+            }
+        }
+    
+        function bookRoom() {
+            let location = document.getElementById("location").value;
+            let address = document.getElementById("address").value;
+            let checkin = document.getElementById("checkin").value;
+            let checkout = document.getElementById("checkout").value;
+            let adults = document.getElementById("adults").value;
+            let totalPrice = document.getElementById("total-price").textContent;
+    
+            if (!location || !address || !checkin || !checkout || !adults) {
+                alert("Please fill all the details.");
+            } else {
+                alert(`Room booked at ${address}, ${location} successfully!\nTotal Price: ${totalPrice}`);
+            }
+        }
+    </script>
+
+    <script>
+        function bookRoom() {
+    let location = document.getElementById("location").value;
+    let address = document.getElementById("address").value;
+    let checkin = document.getElementById("checkin").value;
+    let checkout = document.getElementById("checkout").value;
+    let adults = document.getElementById("adults").value;
+    let totalPrice = document.getElementById("total-price").textContent.replace("₹", "").trim();
+
+    if (!location || !address || !checkin || !checkout || !adults) {
+        alert("Please fill all the details.");
+        return;
+    }
+
+    var options = {
+        "key": "rzp_test_uZiDcgio0Tj9IE",  // Razorpay Key ID
+        "amount": parseInt(totalPrice) * 100, // Amount in paisa
+        "currency": "INR",
+        "name": "Your Company Name",
+        "description": `Booking for ${location}, ${address}`,
+        "handler": function (response) {
+            alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
+            // Yahan backend ko data bhejne ka code likhna hai (optional)
+        },
+        "prefill": {
+            "name": "Vikas Pal",
+            "email": "vikaspal9004@gmail.com",
+            "contact": "9004207813"
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+}
+
+    </script>
+    
+
+    <div class="container1 mt-4"  style="max-width: 850px; padding-left: 100px;">
+        <h2 class="fw-bold">Bliss villa 4bhk 
+        </h2>
+        <div class="pricing">
+            <p class="original-price" style="font-size: 20px;"> <b>Price </b>₹8,000 (24 Hours)</p>
+          
+        </div>
+        <p>Villa no.2, The Beverly Hills, Kune Village, Khandala, Lonavala, Kune N.m., Maharashtra 410405
+            <span class="ms-2 text-warning">&#9733; 4.8/5</span>
+        </p>
+        <h4>Description</h4>
+        <p> Bliss villa 4bhk is a luxurious retreat nestled in the serene landscapes of Karjat. This spacious
+            villa offers two elegantly designed bedrooms, a modern living area, and a fully equipped kitchen. Enjoy
+            breathtaking views from the balcony, relax in the lush green garden, or unwind in the private pool. The
+            villa is perfect for families, couples, or small groups looking for a peaceful getaway. Conveniently
+            located near nature trails and local attractions, it provides the ideal blend of comfort and adventure.
+            Experience tranquility, luxury, and modern amenities, all in one place, for a truly memorable stay.</p>
+
+        <div class="mt-3">
+            <span class="info-box"><i class="fas fa-users"></i> Up to 10 Guests</span>
+            <span class="info-box"><i class="fas fa-bed"></i> 2 Rooms</span>
+            <span class="info-box"><i class="fas fa-bath"></i> 2 Baths</span>
+            <span class="info-box"><i class="fas fa-utensils"></i> Meals Available</span>
+        </div>
+    </div>
+
+    <div class="amenities"  style="max-width: 850px; padding-left: 100px;">
+        <h4>Amenities</h4>
+        <div class="amenities-list">
+            <div class="amenity"><i class="fas fa-wind"></i> Air Conditioner</div>
+            <div class="amenity"><i class="fas fa-car"></i> Private Parking</div>
+            <div class="amenity"><i class="fas fa-utensils"></i> Dining Table</div>
+
+            <div class="amenity"><i class="fas fa-snowflake"></i> Refrigerator</div>
+            <div class="amenity"><i class="fas fa-chair"></i> Outdoor Furniture</div>
+            <div class="amenity"><i class="fas fa-wifi"></i> WiFi</div>
+            <div class="amenity"><i class="fas fa-seedling"></i> Garden</div>
+            <div class="amenity"><i class="fas fa-utensil-spoon"></i> Cutlery</div>
+            <div class="amenity"><i class="fas fa-swimmer"></i> Private Pool</div>
+            <div class="amenity"><i class="fas fa-music"></i> Music System</div>
+            <div class="amenity"><i class="fas fa-umbrella-beach"></i> Pool Loungers</div>
+            <div class="amenity"><i class="fas fa-tree"></i> Spacious Lawn</div>
+            <div class="amenity"><i class="fas fa-user-tie"></i> Chef Availability</div>
+            <div class="amenity"><i class="fas fa-home"></i> Gazebo</div>
+            <div class="amenity"><i class="fas fa-glass-martini"></i> Bar Counter</div>
+        </div>
+    </div>
+    <h4 style="margin-top: 50px; font-weight: bold; padding-left: 100px;">Our Location</h4>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120776.24302630663!2d73.28361772846493!3d18.91998892421443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7fb0837d1bafd%3A0x8dd758e0b6c02446!2sKarjat%20Farmhouse!5e0!3m2!1sen!2sin!4v1742107087810!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="footer_content">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_logo_container text-center">
+                            <div class="footer_logo">
+                                <a href="#"> <img src="newimg/logo.jpg"></a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row footer_row">
+
+                    <!-- Address -->
+                    <div class="col-lg-3">
+                        <div class="footer_title">Our Address</div>
+                        <div class="footer_list">
+                            <ul>
+                                <li>Beach Str. 345</li>
+                                <li>67559 Miami</li>
+                                <li>USA</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Reservations -->
+                    <div class="col-lg-3">
+                        <div class="footer_title">Reservations</div>
+                        <div class="footer_list">
+                            <ul>
+                                <li>Tel: 345 5667 889</li>
+                                <li>Fax; 6783 4567 889</li>
+                                <li>reservations@hotelriver.com</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="col-lg-3">
+                        <div class="footer_title">Newsletter</div>
+                        <div class="newsletter_container">
+                            <form action="#" class="newsletter_form" id="newsletter_form">
+                                <input type="email" class="newsletter_input" placeholder="Your email address"
+                                    required="required">
+                                <button class="newsletter_button">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Footer images -->
+                    <div class="col-lg-3">
+                        <div
+                            class="certificates d-flex flex-row align-items-start justify-content-lg-between justify-content-start flex-lg-nowrap flex-wrap">
+                            <div class="cert"><img src="images/cert_1.png" alt=""></div>
+                            <div class="cert"><img src="images/cert_2.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+            with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </div>
+    </footer>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="styles/bootstrap-4.1.2/popper.js"></script>
+    <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="plugins/greensock/animation.gsap.min.js"></script>
+    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/progressbar/progressbar.min.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="plugins/jquery-datepicker/jquery-ui.js"></script>
+    <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

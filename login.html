@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showRegister() {
+            document.getElementById("loginForm").classList.add("hidden");
+            document.getElementById("registerForm").classList.remove("hidden");
+        }
+
+        function showLogin() {
+            document.getElementById("registerForm").classList.add("hidden");
+            document.getElementById("loginForm").classList.remove("hidden");
+        }
+
+        function registerUser() {
+            let regUsername = document.getElementById("reg-username").value;
+            let regPassword = document.getElementById("reg-password").value;
+            let confirmPassword = document.getElementById("reg-confirm-password").value;
+
+            if (!regUsername || !regPassword || !confirmPassword) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            if (regPassword !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            localStorage.setItem("user_" + regUsername, regPassword);
+            alert("Registration Successful! Please login.");
+            showLogin();
+        }
+
+        function loginUser() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let storedPassword = localStorage.getItem("user_" + username);
+
+            if (storedPassword && storedPassword === password) {
+                localStorage.setItem("user", username);
+                alert("Login Successful");
+                document.getElementById("loginForm").classList.add("hidden");
+                document.getElementById("bookingForm").classList.remove("hidden");
+            } else {
+                alert("Invalid Username or Password.");
+            }
+        }
+
+        function calculatePrice() {
+            let checkin = document.getElementById("checkin").value;
+            let checkout = document.getElementById("checkout").value;
+            let pricePerNight = 8000;
+
+            if (checkin && checkout) {
+                let checkinDate = new Date(checkin);
+                let checkoutDate = new Date(checkout);
+                let nights = (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24);
+                document.getElementById("total-price").innerText = "₹" + (nights * pricePerNight);
+            }
+        }
+
+        function openPaymentGateway(totalPrice) {
+            var options = {
+                "key": "rzp_test_your_key", // Replace with your Razorpay Key
+                "amount": totalPrice * 100, // Razorpay accepts amount in paisa
+                "currency": "INR",
+                "name": "Hotel Booking",
+                "description": "Room Booking Payment",
+                "image": "https://yourlogo.com/logo.png",
+                "handler": function (response) {
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                    localStorage.setItem("bookingDetails", JSON.stringify({
+                        checkin: document.getElementById("checkin").value,
+                        checkout: document.getElementById("checkout").value,
+                        totalPrice: totalPrice
+                    }));
+                    window.location.href = "dashboard.html";
+                },
+                "theme": { "color": "#3399cc" }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
+
+        function proceedToPayment() {
+            let totalPrice = parseInt(document.getElementById("total-price").innerText.replace("₹", ""));
+
+            if (totalPrice === 0 || isNaN(totalPrice)) {
+                alert("Please select check-in and check-out dates first.");
+                return;
+            }
+            openPaymentGateway(totalPrice);
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="container" id="loginForm">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button onclick="loginUser()">Login</button>
+        <p>New user? <a href="#registerForm" onclick="showRegister()">Register here</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div class="container hidden" id="registerForm">
+        <h2>Register</h2>
+        <input type="text" id="reg-username" placeholder="Choose Username" required>
+        <input type="password" id="reg-password" placeholder="Choose Password" required>
+        <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required>
+        <button onclick="registerUser()">Register</button>
+        <p>Already have an account? <a href="#loginForm" onclick="showLogin()">Login here</a></p>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="container hidden" id="bookingForm">
+        <h2>Book Your Room</h2>
+        <label>Check-in Date:</label>
+        <input type="date" id="checkin" onchange="calculatePrice()">
+        <label>Check-out Date:</label>
+        <input type="date" id="checkout" onchange="calculatePrice()">
+        <h3>Total Price: <span id="total-price">₹0</span></h3>
+        <button onclick="proceedToPayment()">Book & Pay</button>
+    </div>
+
+</body>
+</html>

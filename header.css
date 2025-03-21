@@ -1,0 +1,211 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    position: relative;
+}
+
+.popup-content h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #a48b52;
+}
+
+.popup-content p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.popup-content a {
+    color: #a48b52;
+    cursor: pointer;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* ✅ Navbar Styling */
+
+/* ✅ Navbar Styling */
+.navbar {
+    position: fixed; /* ✅ Top pe fix kiya */
+    top: 0;
+    left: 0;
+    width: 100%; /* ✅ Full width */
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #bdbdbd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 999; /* ✅ Top most layer par rakha */
+    transition: padding 0.3s ease; /* ✅ Smooth transition for shrinking effect */
+}
+/* ✅ Navbar Links */
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 50px; /* Links ke beech ka gap */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #000; /* Hover effect */
+}
+
+/* ✅ Logo */
+.logo img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+.login{
+    margin-left: 150px;
+}
+/* ✅ User Icon */
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+/* ✅ Dropdown */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a, 
+.dropdown-content .user-name {
+    padding: 12px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f9f9;
+}
+
+.dropdown-content .user-name {
+    font-weight: bold;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ✅ Show Dropdown */
+.show {
+    display: block;
+}
+
+/* ✅ Login Button */
+.login-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #333;
+}
+
+
+
+
+
+
+
+
+

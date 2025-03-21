@@ -1,0 +1,103 @@
+/* Hero Section Styling */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('img/homebanner.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+}
+
+.hero_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: **#000000**; /* Text ko black kar diya */
+}
+
+.hero_content h1 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: **#fff**; /* Yahan bhi text black kar diya */
+}
+
+/* Search Box Styling */
+.search_box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #ede7db;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search_box input,
+.search_box select {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    background-color: #fff;
+    font-size: 16px;
+    color: #000; /* Text color black */
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search_box button {
+    padding: 10px 20px;
+    background-color: #1d1d1b;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search_box button:hover {
+    background-color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: -100%;
+        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+        transition: right 0.3s ease;
+    }
+
+    .nav ul.active {
+        right: 0;
+    }
+
+    .nav ul li {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .logo_center {
+        order: -1;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
